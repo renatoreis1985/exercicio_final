@@ -20,6 +20,7 @@ from django.urls import path
 from nowonfeed import views
 
 urlpatterns = [
+    path("__debug__/", include(debug_toolbar.urls)), # type: ignore
     path('admin/', admin.site.urls),
     path('', views.login_view, name='login'),
     path('nowonfeed/', views.nowonfeed_view, name='nowonfeed'),
